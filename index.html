@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moss Notes</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Moss Notes 🐻</h1>
+  <p id="thought"></p>
+  <textarea id="note" placeholder="Запиши свою мысль..."></textarea>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('serviceWorker.js')
+        .then(() => console.log('✅ Service Worker зарегистрирован'))
+        .catch(err => console.error('SW ошибка:', err));
+    }
+  </script>
+</body>
+</html>
